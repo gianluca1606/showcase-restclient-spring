@@ -1,0 +1,25 @@
+### Get all posts
+GET http://localhost:8080/interface/posts
+
+### Get post by ID
+GET http://localhost:8080/interface/posts/1
+
+### Create a new post
+POST http://localhost:8080/interface/posts
+Content-Type: application/json
+
+{
+  "title": "test interface usage",
+  "body": "test body",
+  "userId": 1
+}
+
+### Update a post
+PUT http://localhost:8080/interface/posts/1
+Content-Type: application/json
+
+{
+  "title": "updated title by interface",
+  "body": "updated body",
+  "userId": 1
+}
