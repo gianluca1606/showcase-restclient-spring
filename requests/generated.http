@@ -9,7 +9,7 @@ POST http://localhost:8080/generated/posts
 Content-Type: application/json
 
 {
-  "title": "test title",
+  "title": "test interface usage",
   "body": "test body",
   "userId": 1
 }
@@ -19,7 +19,7 @@ PUT http://localhost:8080/generated/posts/1
 Content-Type: application/json
 
 {
-  "title": "updated title",
+  "title": "updated title by interface",
   "body": "updated body",
   "userId": 1
 }

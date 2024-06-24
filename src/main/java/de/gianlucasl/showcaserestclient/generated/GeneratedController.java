@@ -31,13 +31,13 @@ public class GeneratedController {
     // curl -X POST -H "Content-Type: application/json" http://localhost:8080/generated/posts
     @PostMapping("/posts")
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
-        return postClient.postsPostWithHttpInfo(post);
+        return ResponseEntity.ok(postClient.postsPostWithHttpInfo(post).getBody());
     }
 
 
     // curl -X PUT -H "Content-Type: application/json" http://localhost:8080/generated/posts/1
     @PutMapping("/posts/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable Integer id, @RequestBody Post post) {
-        return postClient.postsIdPutWithHttpInfo(id, post);
+        return ResponseEntity.ok(postClient.postsIdPutWithHttpInfo(id, post).getBody());
     }
 }
