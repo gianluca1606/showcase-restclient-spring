@@ -1,4 +1,4 @@
-package de.gianlucasl.showcaserestclient.webclient.interf;
+package de.gianlucasl.showcaserestclient.webclient.interfac;
 
 import de.gianlucasl.showcaserestclient.JsonPlaceHolderPostClient;
 import de.gianlucasl.showcaserestclient.Post;
