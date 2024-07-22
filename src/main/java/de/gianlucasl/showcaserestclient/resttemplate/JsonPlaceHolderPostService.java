@@ -2,8 +2,10 @@ package de.gianlucasl.showcaserestclient.resttemplate;
 
 import de.gianlucasl.showcaserestclient.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -22,8 +24,9 @@ public class JsonPlaceHolderPostService {
     }
 
     public List<Post> getPosts() {
-        Post[] postsArray = restTemplate.getForObject(baseUrl + "/posts", Post[].class);
-        return postsArray != null ? Arrays.asList(postsArray) : List.of();
+        ResponseEntity<List<Post>> response = restTemplate.exchange(baseUrl + "/posts", HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {
+        });
+        return response.getBody();
     }
 
     public Post getPostById(int id) {

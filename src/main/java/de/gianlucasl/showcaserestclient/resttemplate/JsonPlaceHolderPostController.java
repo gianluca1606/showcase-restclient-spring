@@ -13,7 +13,6 @@ public class JsonPlaceHolderPostController {
 
     private final JsonPlaceHolderPostService postService;
 
-    @Autowired
     public JsonPlaceHolderPostController(JsonPlaceHolderPostService postService) {
         this.postService = postService;
     }
