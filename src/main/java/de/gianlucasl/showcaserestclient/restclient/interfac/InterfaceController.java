@@ -1,4 +1,4 @@
-package de.gianlucasl.showcaserestclient.interfac;
+package de.gianlucasl.showcaserestclient.restclient.interfac;
 
 
 import de.gianlucasl.showcaserestclient.Post;

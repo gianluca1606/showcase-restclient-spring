@@ -1,4 +1,4 @@
-package de.gianlucasl.showcaserestclient.generated;
+package de.gianlucasl.showcaserestclient.restclient.generated;
 
 import de.gianlucasl.generated.api.DefaultApi;
 import de.gianlucasl.generated.model.Post;
