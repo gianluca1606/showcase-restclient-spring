@@ -1,7 +1,9 @@
 package de.gianlucasl.showcaserestclient.restclient.interfac;
 
 
+import de.gianlucasl.showcaserestclient.JsonPlaceHolderPostClient;
 import de.gianlucasl.showcaserestclient.Post;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +15,8 @@ public class InterfaceController {
 
     private final JsonPlaceHolderPostClient jsonPlaceHolderPostClient;
 
-    public InterfaceController(JsonPlaceHolderPostClient jsonPlaceHolderPostClient) {
-        this.jsonPlaceHolderPostClient = jsonPlaceHolderPostClient;
+    public InterfaceController(@Qualifier("jsonPlaceHolderPostRestClient") JsonPlaceHolderPostClient jsonPlaceHolderPostRestClient) {
+        this.jsonPlaceHolderPostClient = jsonPlaceHolderPostRestClient;
     }
 
     @GetMapping("/posts")

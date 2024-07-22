@@ -1,6 +1,5 @@
-package de.gianlucasl.showcaserestclient.restclient.interfac;
+package de.gianlucasl.showcaserestclient;
 
-import de.gianlucasl.showcaserestclient.Post;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.PostExchange;
