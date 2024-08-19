@@ -11,12 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/webclient2/posts")
-public class JsonPlaceHolderPostWebClientInterfaceController {
+public class InterfaceWebClientController {
 
     private final JsonPlaceHolderPostClient postClient;
 
     @Autowired
-    public JsonPlaceHolderPostWebClientInterfaceController(@Qualifier("jsonPlaceHolderPostWebClient") JsonPlaceHolderPostClient jsonPlaceHolderPostWebClient) {
+    public InterfaceWebClientController(@Qualifier("jsonPlaceHolderPostWebClient") JsonPlaceHolderPostClient jsonPlaceHolderPostWebClient) {
         this.postClient = jsonPlaceHolderPostWebClient;
     }
 

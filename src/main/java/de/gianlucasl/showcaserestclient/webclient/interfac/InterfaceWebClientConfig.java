@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.support.WebClientAdapter
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @Configuration
-public class JsonPlaceHolderInterfaceConfig {
+public class InterfaceWebClientConfig {
 
     @Bean("jsonPlaceHolderPostWebClient")
     JsonPlaceHolderPostClient jsonPlaceHolderPostWebClient() {

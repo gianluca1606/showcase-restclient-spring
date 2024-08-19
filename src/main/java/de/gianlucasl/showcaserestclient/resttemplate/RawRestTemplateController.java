@@ -1,7 +1,6 @@
 package de.gianlucasl.showcaserestclient.resttemplate;
 
 import de.gianlucasl.showcaserestclient.Post;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,11 +8,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("resttemplate/posts")
-public class JsonPlaceHolderPostController {
+public class RawRestTemplateController {
 
-    private final JsonPlaceHolderPostService postService;
+    private final RawRestTemplateService postService;
 
-    public JsonPlaceHolderPostController(JsonPlaceHolderPostService postService) {
+    public RawRestTemplateController(RawRestTemplateService postService) {
         this.postService = postService;
     }
 

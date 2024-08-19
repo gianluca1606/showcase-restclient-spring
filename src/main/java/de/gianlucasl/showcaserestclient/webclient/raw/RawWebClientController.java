@@ -9,12 +9,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("webclient/posts")
-public class JsonPlaceHolderPostWebClientController {
+public class RawWebClientController {
 
-    private final JsonPlaceHolderPostWebClientService postService;
+    private final RawWebClientService postService;
 
     @Autowired
-    public JsonPlaceHolderPostWebClientController(JsonPlaceHolderPostWebClientService postService) {
+    public RawWebClientController(RawWebClientService postService) {
         this.postService = postService;
     }
 

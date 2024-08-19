@@ -12,12 +12,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @Service
-public class JsonPlaceHolderPostService {
+public class RawRestTemplateService {
 
     private final RestTemplate restTemplate;
     private final String baseUrl = "https://jsonplaceholder.typicode.com";
 
-    public JsonPlaceHolderPostService() {
+    public RawRestTemplateService() {
         this.restTemplate = new RestTemplate();
     }
 

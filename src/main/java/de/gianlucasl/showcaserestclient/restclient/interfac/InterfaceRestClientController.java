@@ -11,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/interface")
-public class InterfaceController {
+public class InterfaceRestClientController {
 
     private final JsonPlaceHolderPostClient jsonPlaceHolderPostClient;
 
-    public InterfaceController(@Qualifier("jsonPlaceHolderPostRestClient") JsonPlaceHolderPostClient jsonPlaceHolderPostRestClient) {
+    public InterfaceRestClientController(@Qualifier("jsonPlaceHolderPostRestClient") JsonPlaceHolderPostClient jsonPlaceHolderPostRestClient) {
         this.jsonPlaceHolderPostClient = jsonPlaceHolderPostRestClient;
     }
 

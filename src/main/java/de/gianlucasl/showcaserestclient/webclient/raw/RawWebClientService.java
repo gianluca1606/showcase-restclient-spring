@@ -8,12 +8,12 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.List;
 
 @Service
-public class JsonPlaceHolderPostWebClientService {
+public class RawWebClientService {
 
     private final WebClient webClient;
 
     @Autowired
-    public JsonPlaceHolderPostWebClientService(WebClient.Builder webClientBuilder) {
+    public RawWebClientService(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.baseUrl("https://jsonplaceholder.typicode.com").build();
     }
 

@@ -27,13 +27,11 @@ public class RawRestController {
     }
 
 
-    // curl -X POST -H "Content-Type: application/json" http://localhost:8080/raw/posts
     @PostMapping("/posts")
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
         return ResponseEntity.ok(rawRestClient.createPost(post));
     }
 
-    // curl -X PUT -H "Content-Type: application/json" http://localhost:8080/raw/posts/1
     @PutMapping("/posts/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable Integer id, @RequestBody Post post) {
         return ResponseEntity.ok(rawRestClient.updatePost(id, post));
