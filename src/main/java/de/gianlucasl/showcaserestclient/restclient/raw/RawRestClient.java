@@ -21,7 +21,8 @@ public class RawRestClient {
     }
 
     public List<Post> getPosts() {
-        return restClient.get().uri("/posts").retrieve().body(new ParameterizedTypeReference<>() {});
+        return restClient.get().uri("/posts").retrieve().body(new ParameterizedTypeReference<>() {
+        });
     }
 
     public Post getPostById(int id) {
@@ -34,5 +35,9 @@ public class RawRestClient {
 
     public Post updatePost(int id, Post post) {
         return restClient.put().uri("/posts/" + id).body(post).retrieve().body(Post.class);
+    }
+
+    public void deletePost(int id) {
+        restClient.delete().uri("/posts/" + id).retrieve().toBodilessEntity();
     }
 }

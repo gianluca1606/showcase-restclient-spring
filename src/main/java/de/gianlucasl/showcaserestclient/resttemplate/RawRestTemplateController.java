@@ -10,29 +10,35 @@ import java.util.List;
 @RequestMapping("resttemplate/posts")
 public class RawRestTemplateController {
 
-    private final RawRestTemplateService postService;
+    private final RawRestTemplateService rawRestTemplateService;
 
     public RawRestTemplateController(RawRestTemplateService postService) {
-        this.postService = postService;
+        this.rawRestTemplateService = postService;
     }
 
     @GetMapping
     public ResponseEntity<List<Post>> getAllPosts() {
-        return ResponseEntity.ok(postService.getPosts());
+        return ResponseEntity.ok(rawRestTemplateService.getPosts());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPostById(@PathVariable int id) {
-        return ResponseEntity.ok(postService.getPostById(id));
+        return ResponseEntity.ok(rawRestTemplateService.getPostById(id));
     }
 
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
-        return ResponseEntity.ok(postService.createPost(post));
+        return ResponseEntity.ok(rawRestTemplateService.createPost(post));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable int id, @RequestBody Post post) {
-        return ResponseEntity.ok(postService.updatePost(id, post));
+        return ResponseEntity.ok(rawRestTemplateService.updatePost(id, post));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deletePost(@PathVariable Integer id) {
+        rawRestTemplateService.deletePost(id);
+        return ResponseEntity.noContent().build();
     }
 }

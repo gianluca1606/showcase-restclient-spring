@@ -23,3 +23,6 @@ Content-Type: application/json
   "body": "updated body",
   "userId": 1
 }
+
+### Delete post by ID
+DELETE http://localhost:8080/resttemplate/posts/3

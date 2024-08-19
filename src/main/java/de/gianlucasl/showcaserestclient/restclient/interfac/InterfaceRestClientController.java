@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/interface")
+@RequestMapping("/interface/posts")
 public class InterfaceRestClientController {
 
     private final JsonPlaceHolderPostClient jsonPlaceHolderPostClient;
@@ -19,22 +19,22 @@ public class InterfaceRestClientController {
         this.jsonPlaceHolderPostClient = jsonPlaceHolderPostRestClient;
     }
 
-    @GetMapping("/posts")
+    @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
         return ResponseEntity.ok(jsonPlaceHolderPostClient.getPosts());
     }
 
-    @GetMapping("/posts/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Post> getPostById(@PathVariable Integer id) {
         return ResponseEntity.ok(jsonPlaceHolderPostClient.getPostById(id));
     }
 
-    @PostMapping("/posts")
+    @PostMapping("")
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
         return ResponseEntity.ok(jsonPlaceHolderPostClient.createPost(post));
     }
 
-    @PutMapping("/posts/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable Integer id, @RequestBody Post post) {
         return ResponseEntity.ok(jsonPlaceHolderPostClient.updatePost(id, post));
     }

@@ -9,7 +9,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
@@ -40,5 +39,9 @@ public class RawRestTemplateService {
     public Post updatePost(int id, Post post) {
         HttpEntity<Post> entity = new HttpEntity<>(post);
         return restTemplate.exchange("/posts/{id}", HttpMethod.PUT, entity, Post.class, id).getBody();
+    }
+
+    public void deletePost(int id) {
+        restTemplate.delete("/posts/{id}", id);
     }
 }
