@@ -11,10 +11,12 @@ import java.util.List;
 public class RawWebClientService {
 
     private final WebClient webClient;
+    private final String baseUrl = "https://jsonplaceholder.typicode.com";
+
 
     @Autowired
     public RawWebClientService(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("https://jsonplaceholder.typicode.com").build();
+        this.webClient = webClientBuilder.baseUrl(baseUrl).build();
     }
 
     public List<Post> getPosts() {

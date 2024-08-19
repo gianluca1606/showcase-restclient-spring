@@ -2,6 +2,7 @@ package de.gianlucasl.showcaserestclient.restclient.raw;
 
 
 import de.gianlucasl.showcaserestclient.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +16,8 @@ public class RawRestClient {
     private final RestClient restClient;
     private final String baseUrl = "https://jsonplaceholder.typicode.com";
 
-    public RawRestClient() {
-        this.restClient = RestClient.create(baseUrl);
+    public RawRestClient(@Autowired RestClient.Builder restClientBuilder) {
+        this.restClient = restClientBuilder.baseUrl(baseUrl).build();
     }
 
     public List<Post> getPosts() {
